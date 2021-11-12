@@ -1,0 +1,165 @@
+a {
+	color:#00B4FF;
+}
+a:hover {
+	color:#333;
+}
+input[type="text"], input[type="email"], input[type="phone"], textarea {
+	background:#f8f8f8;
+	color:#1d1d1d;
+}
+input[type="button"], input[type="submit"], button {
+	background:#00b4ff;
+	color:#fff;
+}
+input[type="button"]:hover, input[type="submit"]:hover, button:hover,
+input[type="button"]:active, input[type="submit"]:active, button:active {
+	background:#333;
+}
+body {
+	color:#333;
+}
+.navigation {
+	background:#1d1d1d;
+	color:#6c6c6c;
+}
+.navigation a.nav-icon {
+	color:#6c6c6c;
+}
+.navigation a.nav-icon:hover{
+	color:#999;
+}
+.navigation li a {
+	color:#6c6c6c;
+}
+.navigation li:hover a {
+	color:#999;
+}
+.navigation li.active a {
+	color:#fff;
+}
+.showcase .tagline {
+	color:#333;
+}
+.page-heading {
+	color:#bbb;
+}
+.page-heading h2 {
+	color:#1d1d1d;
+}
+.page-heading h2 span {
+	color:#00b4ff;
+}
+.breaker {
+	background:#ccc;
+}
+.work {
+	background:#f8f8f8;
+}
+.project-lightbox {
+	background:#fff;
+	color:#333;
+}
+.project-lightbox .title {
+	background:#333;
+}
+.project-lightbox .title h3 {
+	color:#fffefe;
+}
+.project-lightbox a.close {
+	background:#1d1d1d;
+	color:#fff;
+}
+.project-lightbox a.close:hover{
+	background:#00B4FF;
+}
+.about {
+	background:rgba(51,51,51,.9);
+	color:#bbb;
+}
+.about .page-heading h2 {
+	color:#fff;
+}
+.content p .title {
+	color:#fff;
+}
+h3.sub-title{
+	color:#fff;
+}
+.expertise .level{
+	background:#292929;
+}
+.level .color1{
+	background:#53ccff;
+}
+.level .color2{
+	background:#47bced;
+}
+.level .color3{
+	background:#31a5d5;
+}
+.level .color4{
+	background:#1f90be;
+}
+.level .color5{
+	background:#0e7aa6;
+}
+.level .color6{
+	background:#096286;
+}
+.expertise .skill{
+	color:#999;
+}
+.social li a {
+	color:#bbb;
+}
+.social li a:hover{
+	color:#fff;
+}
+.social li.facebook a:hover {
+	background:#3b56b6;
+}
+.social li.twitter a:hover {
+	background:#33ccff;
+}
+.social li.vimeo a:hover {
+	background:#aad450;
+}
+.social li.dribbble a:hover {
+	background:#ea4c89;
+}
+.clients {
+	background:#00b4ff;
+}
+.clients .page-heading h2 {
+	color:#fff;
+}
+.clients .page-heading .breaker {
+	background:#fff
+}
+.contact {
+	background:#fff;
+}
+.contact #message{
+	color:#e74c3c;
+}
+.contact #success_page h3{
+	color:#2ecc71;
+}
+.contact #success_page p{
+	color:#333;
+}
+.twitter-comment {
+	background:#f8f8f8;
+	color:#1d1d1d;
+}
+.twitter-comment .tweetie {
+	color:#33ccff;
+}
+.twitter-comment .date{
+	color:#999;
+}
+.footer {
+	background:#333;
+	color:#bbb;
+}

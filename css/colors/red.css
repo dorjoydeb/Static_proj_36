@@ -1,0 +1,33 @@
+a {
+	color:#e74c3c;
+}
+input[type="button"], input[type="submit"], button {
+	background:#e74c3c;
+}
+.project-lightbox a.close:hover{
+	background:#e74c3c;
+}
+.level .color1{
+	background:#e74c3c;
+}
+.level .color2{
+	background:#dc4333;
+}
+.level .color3{
+	background:#ce3626;
+}
+.level .color4{
+	background:#c32d1e;
+}
+.level .color5{
+	background:#b52617;
+}
+.level .color6{
+	background:#a41d0f;
+}
+.clients {
+	background:#e74c3c;
+}
+.twitter-comment .tweetie {
+	color:#e74c3c;
+}

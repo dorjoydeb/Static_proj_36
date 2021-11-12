@@ -1,0 +1,643 @@
+@import url("icons.css");
+@import url("animations.css");
+/*  CSS definations for Solotrio  */
+/*-------------------------------------------------------------------------------------------*/
+/* 0. RESET */
+/*-------------------------------------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+* {
+	outline:none;
+}
+
+/*-------------------------------------------------------------------------------------------*/
+/* 1. SETUP */
+/*-------------------------------------------------------------------------------------------*/
+/* Google Fonts Import */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700,700italic,800,800italic,600italic,600);
+
+/* 1.1 Defaults */
+h1, h2, h3, h4, h5, h6, strong {
+	font-weight:bold;
+}
+i, em {
+	font-style:italic;
+}
+.left {
+	float:left;
+}
+.right {
+	float:right;
+}
+.alignleft {
+	text-align:left;
+}
+.alignright {
+	text-align:right;
+}
+.aligncenter {
+	text-align:center;
+}
+.clear {
+	clear:both;
+	line-height:1px;
+	height:1px;
+}
+textarea {
+	overflow:auto;
+	font-family:Arial, Helvetica, sans-serif; /* Body Font Family Will Come Here */
+}
+a {
+	color:#00B4FF;
+	text-decoration:none;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+a:hover {
+	color:#333;
+}
+address {
+	font-style:normal;
+}
+
+/* 1.2 Common Tages */
+input[type="text"], input[type="email"], input[type="phone"], textarea {
+	border:1px solid #e5e5e5;
+	background:#f8f8f8;
+  	display: block;
+  	width: 100%;
+  	min-height: 45px;
+  	-webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+	padding:0 10px;
+	font-size:14px;
+	color:#1d1d1d;
+	line-height:30px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	transition: .5s;
+	-webkit-appearance:none;
+}
+textarea {
+	resize:vertical;
+	height:125px;
+	padding:10px;
+	font-family: 'Open Sans', sans-serif;
+}
+input[type="text"]:focus, input[type="email"]:focus, input[type="phone"]:focus, textarea:focus {
+	border:1px solid #999;
+}
+input[type="button"], input[type="submit"], button {
+	background:#00b4ff;
+	border:none;
+	width:100%;
+  	-webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+	height:43px;
+	cursor:pointer;
+	font-size:16px;
+	color:#fff;
+	line-height:43px;
+	text-transform:uppercase;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	transition: .5s;
+	-webkit-appearance:none;
+}
+input[type="button"]:hover, input[type="submit"]:hover, button:hover,
+input[type="button"]:active, input[type="submit"]:active, button:active {
+	background:#333;
+}
+img, object, embed {
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+	width:100%;
+}
+/* Preloader */
+#preloader {
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background-color:#fff; /* change if the mask should have another color then white */
+	z-index:11000; /* makes sure it stays on top */
+}
+#status {
+	width:200px;
+	height:200px;
+	position:absolute;
+	left:50%; /* centers the loading animation horizontally one the screen */
+	top:50%; /* centers the loading animation vertically one the screen */
+	margin:-100px 0 0 -100px; /* is width and height divided by two */
+}
+
+/* Flexslider CSS */
+/* Browser Resets */
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;} 
+.flex-direction-nav {
+	 display:none;
+}
+/* FlexSlider Necessary Styles
+*********************************/ 
+.flexslider {margin: 0; padding: 0;}
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img {width: 100%; display: block;}
+.flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;} 
+html[xmlns] .slides {display: block;} 
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+
+/* FlexSlider Default Theme
+*********************************/
+.flexslider {margin: 0 0 0 0; position: relative; zoom: 1;}
+.flex-viewport {max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; transition: all 1s ease;}
+.loading .flex-viewport {max-height: 300px;}
+.flexslider .slides {zoom: 1;}
+.carousel li {margin-right: 5px}
+.flex-control-nav{margin-top:20px;}
+.flex-control-nav li{display:inline-block; margin-right:10px; cursor:pointer}
+.flex-control-nav a{width:10px; height:10px; -webkit-border-radius:100%; -moz-border-radius:100%; border-radius:100%; background:#fff; opacity:.7; text-indent:-9999px; display:block;}
+.flex-control-nav a:hover, .flex-control-nav a.flex-active{opacity:1;}
+
+/*-------------------------------------------------------------------------------------------*/
+/* 2. SITE STRUCTURE & APPEARANCE */
+/*-------------------------------------------------------------------------------------------*/
+body {
+	background:#fff;
+	font-family: 'Open Sans', sans-serif;
+	font-size:12px;
+	line-height:18px;
+	color:#333;
+	-webkit-text-size-adjust: 100%;
+	height:100%;
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+.bg{
+	background: url(../images/YOUR IMAGE NAME HERE) no-repeat scroll center center;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	background-size:cover;
+	position:fixed;
+	overflow:hidden;
+	width:100%;
+	height:100%;
+	z-index:-1;
+	top:0;
+	left:0;
+}
+.main-wrapper{
+	padding-left:60px;
+	position:relative;
+}
+.pages{
+	z-index: 1
+}
+/* Navigation */
+.navigation {
+	background:#1d1d1d;
+	width:60px;
+	overflow:hidden;
+	height:100%;
+	float:left;
+	position:fixed;
+	left:0;
+	top:0;
+	z-index:999;
+	font-size:16px;
+	color:#6c6c6c;
+	text-transform:uppercase;
+}
+.navigation a.nav-icon {
+	font-size:22px;
+	line-height:22px;
+	width:22px;
+	height:22px;
+	float:left;
+	display:block;
+	margin:22px 0 0 19px;
+	color:#6c6c6c;
+}
+.navigation a.nav-icon:hover{
+	color:#999;
+}
+.navigation ul {
+	padding:58px 0 0 0;
+	float:left;
+	clear:both;
+}
+.navigation ul.nav {
+	display:none;
+}
+.navigation li {
+	height:15px;
+	white-space:nowrap;
+	padding-bottom:25px;
+}
+.navigation li a {
+	color:#6c6c6c;
+	width:38px;
+	padding-left:22px;
+	display:block;
+	text-align:center;
+	font-size:14px;
+}
+.navigation li:hover a {
+	color:#999;
+}
+.navigation li.active a {
+	color:#fff;
+}
+.navigation li span{
+	display:none;
+	padding-top:5px;
+	font-size:12px;
+}
+.navigation li i {
+	width:16px;
+	height:15px;
+	float:left;
+	margin:0 10px 0 0;
+}
+/* header */
+.showcase .alt-img{
+	display:none;
+}
+.showcase .tagline {
+	padding-top:240px;
+	font-size:36px;
+	color:#333;
+	line-height:normal;
+}
+.showcase .tagline strong {
+	display:block;
+	font-size:72px;
+	text-transform:uppercase;
+}
+
+/* page-heading */
+.page-heading {
+	padding-bottom:60px;
+	text-align:center;
+	font-size:17px;
+	color:#bbb;
+}
+.page-heading h2 {
+	padding-bottom:10px;
+	font-size:40px;
+	color:#1d1d1d;
+	font-weight:300;
+	line-height:normal;
+}
+.page-heading h2 span {
+	color:#00b4ff;
+}
+.breaker {
+	background:#ccc;
+	width:83px;
+	height:1px;
+	clear:both;
+	margin:0 auto;
+}
+.page-heading p {
+	line-height:normal;
+	text-transform:uppercase;
+	font-weight:400;
+}
+
+/* Work */
+.work {
+	padding:60px 0;
+	background:#f8f8f8;
+}
+.work .grid_4{
+	margin-bottom:20px;
+}
+
+/* project-lightbox */
+.project-lightbox {
+	background:#fff;
+	width:100%;
+	height:100%;
+	font-size:14px;
+	color:#333;
+	position:fixed;
+	left:0;
+	top:0;
+	z-index:11000;
+	display:none;
+	overflow:auto;
+}
+.project-lightbox .title {
+	background:#333;
+	width:100%;
+	height:70px;
+	margin-bottom:75px;
+	line-height:70px;
+}
+.project-lightbox .title h3 {
+	text-align:center;
+	font-size:30px;
+	color:#fffefe;
+	font-weight:300;
+}
+.project-lightbox a.close {
+	background:#1d1d1d;
+	width:70px;
+	height:70px;
+	float:left;
+	position:absolute;
+	right:0;
+	top:0;
+	color:#fff;
+	font-size:54px;
+	font-weight:400;
+	line-height:60px;
+	text-align:center;
+	z-index:999;
+}
+.project-lightbox a.close:hover{
+	background:#00B4FF;
+}
+
+/* Info */
+.project-info p {
+	line-height:24px;
+	padding-bottom:26px;
+}
+.project-info ul {
+	margin-top:-13px;
+}
+.project-info li {
+	border-top:1px solid #ccc;
+	width:auto;
+	float:none;
+	margin:0;
+	padding:10px 0;
+}
+.project-info li:first-child {
+	border-top:none;
+}
+.project-info li span {
+	display:inline-block;
+	width:145px;
+}
+
+/* About */
+.about {
+	background:rgba(51,51,51,.9);
+	padding:60px 0 40px 0;
+	font-size:15px;
+	color:#bbb;
+}
+.about .page-heading h2 {
+	color:#fff;
+}
+.content {
+	padding-bottom:57px;
+}
+.content p {
+	line-height:28px;
+	padding-bottom:30px;
+}
+.content p .title {
+	color:#fff;
+	text-transform:uppercase;
+}
+h3.sub-title{
+	color:#fff;
+	line-height:28px;
+	text-transform:uppercase;
+	font-weight:normal;
+}
+.expertise{
+	margin-top:12px;
+}
+.expertise .level{
+	display:inline-block;
+	background:#292929;
+	width:60%;
+	height:9px;
+}
+.expertise .level span{
+	display:block;
+	height:9px;
+}
+.level .color1{
+	background:#53ccff;
+}
+.level .color2{
+	background:#47bced;
+}
+.level .color3{
+	background:#31a5d5;
+}
+.level .color4{
+	background:#1f90be;
+}
+.level .color5{
+	background:#0e7aa6;
+}
+.level .color6{
+	background:#096286;
+}
+.expertise .skill{
+	display:inline-block;
+	margin-left:3px;
+	font-size:12px;
+	text-transform:uppercase;
+	color:#999;
+}
+
+/* Social */
+.social {
+	padding-top:60px;
+}
+.social ul {
+	text-align:center;
+}
+.social li {
+	display:inline-block;
+	width:48px;
+	height:50px;
+	margin:0 1px;
+	padding:0;
+}
+.social li a {
+	display:block;
+	height:35px;
+	padding:15px 0 0 0;
+	color:#bbb;
+	font-size:22px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+}
+.social li a:hover{
+	color:#fff;
+}
+.social li.facebook a:hover {
+	background:#3b56b6;
+}
+.social li.twitter a:hover {
+	background:#33ccff;
+}
+.social li.vimeo a:hover {
+	background:#aad450;
+}
+.social li.dribbble a:hover {
+	background:#ea4c89;
+}
+
+/* Clients */
+.clients {
+	padding:60px 0;
+	background:#00b4ff;
+	color:#fff;
+}
+.clients .page-heading h2 {
+	padding-bottom:20px;
+	color:#fff;
+}
+.clients .page-heading .breaker {
+	margin-bottom:13px;
+	background:#fff
+}
+.clients-logo{
+	padding:0 0 30px 0;
+	text-align:center;
+}
+.clients-logo li{
+	margin:0 25px;
+	display:inline-block;
+}
+.testimonials{
+	text-align:center;
+	margin-top:50px;
+}
+.testimonials p{
+	font-size:30px;
+	line-height:40px;
+	font-style:italic;
+	font-weight:300
+}
+.testimonials cite{
+	font-weight:600;
+	font-size:18px;
+	margin-top:40px;
+	display:block;
+}
+
+/* Contact */
+.contact {
+	padding:60px 0;
+	background:#fff;
+}
+.contact .page-heading h2 {
+	padding-bottom:20px;
+}
+.contact .page-heading .breaker {
+	margin-bottom:23px;
+}
+.contact .form-row {
+	margin-bottom:12px;
+}
+.contact .form-row.last {
+	margin-bottom:0;
+}
+.contact .loader{
+	width:auto!important;
+}
+.contact #message{
+	padding:10px 0 0 0;
+	color:#e74c3c;
+}
+.contact #success_page h3{
+	color:#2ecc71;
+}
+.contact #success_page p{
+	color:#333;
+}
+
+/* Twitter-comment */
+.twitter-comment {
+	background:#f8f8f8;
+	text-align:center;
+	font-size:14px;
+	color:#1d1d1d;
+	position:relative;
+	padding:40px 0;
+}
+.twitter-comment .tweet{
+	display:inline-block;
+}
+.twitter-comment .tweetie {
+	color:#33ccff;
+	font-size:30px;
+	display:inline-block;
+	margin-right:20px;
+	line-height:normal;
+}
+.twitter-comment .date{
+	color:#999;
+	font-style:italic;
+	font-size:80%;
+	padding-top:10px;
+}
+
+/* Footer */
+.footer {
+	background:#333;
+	color:#bbb;
+	min-height:15px;
+	padding:30px 0;
+	text-align:center;
+}
